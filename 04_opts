@@ -2,3 +2,4 @@ setopt correct
 setopt auto_cd
 setopt auto_pushd
 setopt short_loops
+setopt extended_glob
