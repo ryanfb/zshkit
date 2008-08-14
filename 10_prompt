@@ -1,3 +1,14 @@
 setopt prompt_subst
-PROMPT='%{$reset_color%}%B%n%b@%m:%~`git-prompt`%(!.#.$) '
+
+# Sets color of hostname based on a single letter
+# Change offset and letter if you don't like your regular color
+function hostname-color () {
+	offset=1
+	letter=2
+	val=$(( 30 + (`printf '%d' "'$hostname[$letter]"` + $offset) % 7 ))
+	echo "\e[${val}m"
+}
+
+hostname_color=`hostname-color`
+PROMPT='%{$reset_color%}%B%n%b@%{$hostname_color%}%m%{$reset_color%}:%~`git-prompt`%(!.#.$) '
 RPROMPT='%{$reset_color%}[%*]' 
