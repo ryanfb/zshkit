@@ -2,10 +2,6 @@ export EDITOR
 
 if [[ -x `which mate` ]]; then
 	EDITOR="mate -w"
-elif [[ -x `which nano` ]]; then
-	EDITOR=nano
-elif [[ -x `which pico` ]]; then
-	EDITOR=pico
 else
 	EDITOR=vi
 fi
