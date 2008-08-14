@@ -1,0 +1,4 @@
+setopt correct_all
+setopt auto_cd
+setopt auto_pushd
+setopt short_loops
