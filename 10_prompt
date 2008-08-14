@@ -6,9 +6,9 @@ function hostname-color () {
 	offset=1
 	letter=2
 	val=$(( 30 + (`printf '%d' "'$HOST[$letter]"` + $offset) % 7 ))
-	echo "\e[${val}m"
+	echo "\e[1;${val}m"
 }
 
 hostname_color=`hostname-color`
-PROMPT='%{$reset_color%}%B%n%b@%{$hostname_color%}%m%{$reset_color%}:%~`git-prompt`%(!.#.$) '
+PROMPT='%{$reset_color%}%n@%{$hostname_color%}%m%{$reset_color%}:%~`git-prompt`%(!.#.$) '
 RPROMPT='%{$reset_color%}[%*]' 
