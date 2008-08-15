@@ -1,4 +1,4 @@
-if [[ -x `which git` ]]; then
+if [[ -x `which git` || -x /usr/local/git/bin/git ]]; then
 	function git-branch-name () {
 		git branch 2> /dev/null | grep '^\*' | sed 's/^\*\ //'
 	}
