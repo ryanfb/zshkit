@@ -28,5 +28,6 @@ if [[ -x `which git` || -x /usr/local/git/bin/git ]]; then
 		git config branch.master.remote origin
 		git config branch.master.merge refs/heads/master
 	}
+	alias revert='git reset --hard'
 	
 fi
