@@ -1,0 +1,4 @@
+function mess {
+  DIR=`~/source/scripts/files/mess.rb "$@"`
+  [[ $? -eq 0 ]] && cd "$DIR"
+}
