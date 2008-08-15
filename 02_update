@@ -1,4 +1,4 @@
-if [[ -x `which git` ]]; then
+if [[ -x `which git` || -x /usr/local/git/bin/git ]]; then
 	mydir=`dirname $0`
 	if [[ $mydir = . ]]; then
 		mydir=`pwd`
