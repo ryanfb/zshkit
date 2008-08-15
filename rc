@@ -5,3 +5,6 @@ compinit
 
 autoload -Uz colors
 colors
+
+# Fancy version of mv
+autoload -Uz zmv
