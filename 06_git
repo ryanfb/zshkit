@@ -39,4 +39,16 @@ if [[ -x `which git` || -x /usr/local/git/bin/git ]]; then
 		open $(github-url)
 	}
 	
+	# Function to pull new comment lines
+	# BSD sed is junk, otherwise I would have an alternation subexpression
+	# like \(#|\/\/\) to let you use different comment delimiters
+	function git-comment-diffs () {
+		git diff | sed -n -e 's/^\+[[:space:]]*#[[:space:]]*//p'
+	}
+
+	# Function to commit all with new comments in message
+	function git-commit-comments () {
+		git commit -a -m "$(git-comment-diffs)"
+	}
+
 fi
