@@ -5,5 +5,8 @@ path=(/opt/local/bin $path)
 # (recursing like this adds a few ms if you do it each login)
 alias scripts="path=($path ~/source/scripts/**/)"
 
+# Alias to put ccache first on path
+alias use-ccache="path=(/opt/local/ccache/bin $path)"
+
 # Allow MacPorts man pages
 manpath=($manpath /opt/local/man)
