@@ -1,9 +1,7 @@
-if [[ -f ~/.zkbd/$TERM-$VENDOR-$OSTYPE ]]; then
-	bindkey "${key[Home]}" beginning-of-line
-	bindkey "${key[End]}" end-of-line
-fi
-
 # We always want a few of the EMACs-style maps
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^R" history-incremental-search-backward
+
+bindkey "${key[Home]}" beginning-of-line
+bindkey "${key[End]}" end-of-line
