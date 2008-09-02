@@ -2,3 +2,8 @@ if [[ -x `which ggrep` ]]; then
 	alias rgrep=`which grep`
 	alias grep='ggrep --color'
 fi
+
+# Debian reserves /usr/bin/ack for some program I never use
+if [[ -x `which ack-grep` ]]; then
+	alias ack='ack-grep'
+fi
