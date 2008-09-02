@@ -1,10 +1,6 @@
 # I want /opt/local/bin to take precedence
 path=(/opt/local/bin $path)
 
-# Alias to put dumb scripts on path
-# (recursing like this adds a few ms if you do it each login)
-alias scripts="path=($path ~/source/scripts/**/)"
-
 # Alias to put ccache first on path
 alias use-ccache="path=(/usr/local/bin/ccache $path)"
 
