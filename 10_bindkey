@@ -7,7 +7,7 @@ if [[ -f ~/.zkbd/$TERM-$VENDOR-$OSTYPE ]]; then
 	bindkey "^E" end-of-line
 	bindkey "^R" history-incremental-search-backward
 
-  # Add some custom non-standard keys
-  bindkey "^S" backward-word
-  stty -ixon
+	# Add some custom non-standard keys
+	bindkey "^S" backward-word
+	stty -ixon
 fi
