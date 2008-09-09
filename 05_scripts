@@ -1,4 +1,4 @@
-scriptsdir='~/source/scripts'
+scriptsdir="$HOME/source/scripts"
 
 # Alias to put dumb scripts on path
 # (recursing like this adds a few ms if you do it each login)
