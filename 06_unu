@@ -1,0 +1,4 @@
+# Set a spacing of 1 for all axes, useful for whiny gage commands
+function unu-setspacing () {
+	unu axinfo -a 0 -sp 1 -i $1 | unu axinfo -a 1 -sp 1 | unu axinfo -a 2 -sp 1 -o $1
+}
