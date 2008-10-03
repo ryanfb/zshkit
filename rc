@@ -1,5 +1,7 @@
 zstyle ':completion:*' completer _expand _complete
 
+fpath=( `dirname $0` $fpath )
+
 autoload -Uz compinit
 compinit
 
