@@ -72,6 +72,12 @@ if [[ $words[1] == unu ]]; then
 	fi
 fi
 
+typeset -ga io_args
+io_args=(
+	'-i-[input nrrd]:file:_files'
+	'-o-[output nrrd]:new file'
+)
+
 _unu-about () {
 	_message 'no arguments'
 }
@@ -82,9 +88,10 @@ _unu-env () {
 
 _unu-heq () {
 	_arguments \
-		'(-b --bin)'{-b,--bin=-}'[# bins to use in histogram]' \
-		'(-s --smart)'{-s,--smart=-}'[# bins to ignore in histogram]' \
-		'(-a --amount)'{-a,--amount=-}'[extent to which histo equalization should be applied]' \
-		'(-m --map)'{-m,--map=-}'[save univariate histogram mapping to this file]:file:_files' \
+		'(-b --bin)'{-b,--bin\ -}'[# bins to use in histogram]' \
+		'(-s --smart)'{-s,--smart\ -}'[# bins to ignore in histogram]' \
+		'(-a --amount)'{-a,--amount\ -}'[extent to which histo equalization should be applied]' \
+		'(-m --map)'{-m,--map\ -}'[save univariate histogram mapping to this file]:new file' \
+		$io_args \
 		'*:file:_files' && ret=0
-}	
+}
