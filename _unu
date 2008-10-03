@@ -1,0 +1,90 @@
+#compdef unu
+
+_unu_commands () {
+	local -a commands
+
+	commands=(
+		'about:Information about this program and its use'
+		'env:List relevant environment variables and their values'
+		'make:Create a nrrd (or nrrd header) from scratch'
+		'head:Print header of one or more nrrd files'
+		'data:Print data segment of a nrrd file'
+		'convert:Convert nrrd to another type (as if by per-value cast)'
+		'resample:Filtering and {up,down}sampling with a seperable kernel'
+		'cmedian:Cheap histogram-based median/mode filtering'
+		'minmax:Print out min and max values in one or more nrrds'
+		'quantize:Quantize values to 8, 16, or 32 bits'
+		'unquantize:Recover floating point values from quantized data'
+		'project:Collapse scanlines to scalars along some axis'
+		'slice:Slice at a position along an axis'
+		'dice:Save all slices along one axis into separate files'
+		'splice:Replace a slice with a different nrrd'
+		'join:Connect slices and/or slabs into a bigger nrrd'
+		'crop:Crop along each axis to make a smaller nrrd'
+		'inset:Replace a sub-region with a different nrrd'
+		'pad:Pad along each axis to make a bigger nrrd'
+		'reshape:Superficially change dimension and/or axes sizes'
+		'permute:Permute scan-line ordering of axes'
+		'swap:Interchange scan-line ordering of two axes'
+		'shuffle:Permute slices along one axis'
+		'flip:Reverse order of slices along one axis'
+		'unorient:make image orientation be axis-aligned'
+		'axinfo:Modify attributes of an axis'
+		'axinsert:Add a "stub" (length 1) axis to a nrrd'
+		'axsplit:Split one axis into two axes'
+		'axdelete:Remove one or more singleton axes from a nrrd'
+		'axmerge:Merge two adjacent axes into one'
+		'tile:Tile slices of one axis into two other axes'
+		'untile:Undo "unu tile": merge slow parts of two axis splits'
+		'histo:Create 1-D histogram of values in a nrrd'
+		'dhisto:Create (PGM) image of 1-D value histogram'
+		'jhisto:Create joint histogram of two or more nrrds'
+		'histax:Replace each scanline along an axis with its histogram'
+		'heq:Perform histogram equalization'
+		'gamma:Brighten or darken values with a gamma'
+		'1op:Unary operation on a nrrd'
+		'2op:Binary operation on two nrrds, or on a nrrd and a constant'
+		'3op:Ternary operation on three nrrds or constants'
+		'lut:Map nrrd through one univariate lookup table'
+		'mlut:Map nrrd through whole nrrd of univariate lookup tables'
+		'subst:Map nrrd through a univariate substitution table'
+		'rmap:Map nrrd through one *regular* univariate map ("colormap")'
+		'mrmap:Map nrrd through a whole nrrd of regular univariate maps'
+		'imap:Map nrrd through *irregular* univariate map ("colormap")'
+		'lut2:Map nrrd through a bivariate lookup table'
+		'ccfind:Find connected components (CCs)'
+		'ccadj:Form adjecency matrix of connected components'
+		'ccmerge:Merge CCs with their neighbors, under various contraints'
+		'ccsettle:Remap CC values down to lowest contiguous values'
+		'save:Write nrrd with specific format, encoding, or endianness'
+	)
+
+	_describe -t commands 'unu command' commands && ret=0
+}
+
+if [[ $words[1] == unu ]]; then
+	if (( CURRENT == 2 )); then
+		_unu_commands
+	else
+		shift words
+		(( CURRENT-- ))
+		_call_function ret _unu-$words[1]
+	fi
+fi
+
+_unu-about () {
+	_message 'no arguments'
+}
+
+_unu-env () {
+	_message 'no arguments'
+}
+
+_unu-heq () {
+	_arguments \
+		'(-b --bin)'{-b,--bin=-}'[# bins to use in histogram]' \
+		'(-s --smart)'{-s,--smart=-}'[# bins to ignore in histogram]' \
+		'(-a --amount)'{-a,--amount=-}'[extent to which histo equalization should be applied]' \
+		'(-m --map)'{-m,--map=-}'[save univariate histogram mapping to this file]:file:_files' \
+		'*:file:_files' && ret=0
+}	
