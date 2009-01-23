@@ -8,6 +8,7 @@ if [[ -x `which git` || -x /usr/local/git/bin/git ]]; then
 	alias gcm='git-commit -m '
 	alias gst=git-status
 	alias ga=git-add
+	alias gd=git-diff
 
 	function git-branch-name () {
 		git branch 2> /dev/null | grep '^\*' | sed 's/^\*\ //'
