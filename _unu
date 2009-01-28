@@ -93,5 +93,5 @@ _unu-heq () {
 		'(-a --amount)'{-a,--amount\ -}'[extent to which histo equalization should be applied]' \
 		'(-m --map)'{-m,--map\ -}'[save univariate histogram mapping to this file]:new file' \
 		$io_args \
-		'*:file:_files' && ret=0
+	 	&& ret=0
 }
