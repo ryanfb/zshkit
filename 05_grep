@@ -7,3 +7,8 @@ fi
 if [[ -x `which ack-grep` ]]; then
 	alias ack='ack-grep'
 fi
+
+if [[ -x `which ack` || -x `which ack-grep` ]]; then
+	# "ack here" alias
+	alias ackh='ack -iun'
+fi
