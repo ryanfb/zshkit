@@ -10,3 +10,6 @@ colors
 
 # Fancy version of mv
 autoload -Uz zmv
+
+# zargs: like xargs but works with shell globbing
+autoload -Uz zargs
