@@ -79,3 +79,4 @@ else
 	# Provide a null git-prompt so we don't error-on-prompt if you don't have git
 	function git-prompt () {}
 fi
+
