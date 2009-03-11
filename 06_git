@@ -2,16 +2,6 @@ if [[ -x `which git` || -x /usr/local/git/bin/git ]]; then
 	git_enable=1
 
 	alias g=git
-	alias gco=git-checkout
-	alias gb=git-branch
-	alias gcam='git-commit -a -m '
-	alias gcm='git-commit -m '
-	alias gst=git-status
-	alias ga=git-add
-	alias gd=git-diff
-	alias gci='git-commit --interactive'
-	alias gai='git-add --interactive'
-	alias gl=git-log
 
 	function git-branch-name () {
 		git branch 2> /dev/null | grep '^\*' | sed 's/^\*\ //'
