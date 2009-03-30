@@ -60,8 +60,6 @@ if [[ -x `which git` || -x /usr/local/git/bin/git ]]; then
 		git config branch.$(git-branch-name).merge refs/heads/$(git-branch-name)
 	}
 	alias revert='git reset --hard'
-	# List ignored files
-	alias git-ignored='git-ls-files --others -i --exclude-standard'
 	
 	function github-url () {
 		git config remote.origin.url | sed -En 's/git(@|:\/\/)github.com(:|\/)(.+)\/(.+).git/https:\/\/github.com\/\3\/\4/p'
