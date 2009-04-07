@@ -26,7 +26,7 @@ if [[ -x `which git` || -x /usr/local/git/bin/git ]]; then
 		git rebase master
 	}
   function git-need-to-push() {
-    if pushtime=$(git status | grep 'Your branch is ahead' 2> /dev/null); then
+    if pushtime=$(echo $1 | grep 'Your branch is ahead' 2> /dev/null); then
       echo "↑"
     fi
   }
@@ -41,7 +41,7 @@ if [[ -x `which git` || -x /usr/local/git/bin/git ]]; then
 		dirty_color=$fg[cyan]
 		if [[ $git_enable = 1 ]]; then
 			gstatus=$(git status 2> /dev/null)
-			push_status=$(git-need-to-push 2> /dev/null)
+			push_status=$(git-need-to-push $gstatus 2> /dev/null)
 			branch=$(echo $gstatus | head -n 1 | sed 's/^# On branch //')
 			dirty=$(echo $gstatus | sed 's/^#.*$//' | tail -n 2 | grep 'nothing to commit (working directory clean)'; echo $?)
 			if [[ x$branch != x ]]; then
