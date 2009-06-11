@@ -1,8 +1,12 @@
-# I want /opt/local/bin to take precedence
-path=(/opt/local/bin $path)
+# Don't re-path for nested shells
+if [[ $SHLVL == 1 ]]; then
+	# I want /opt/local/bin to take precedence
+	path=(/opt/local/bin $path)
+
+	# Allow MacPorts man pages
+	manpath=($manpath /opt/local/man)
+fi
 
 # Alias to put ccache first on path
 alias use-ccache="path=(/usr/local/bin/ccache $path)"
 
-# Allow MacPorts man pages
-manpath=($manpath /opt/local/man)
