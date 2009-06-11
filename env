@@ -1,8 +1,5 @@
-# Don't re-env for nested shells
-if [[ $SHLVL == 1 ]]; then
-	mydir=`dirname $0`
+mydir=`dirname $0`
 
-	for f in $mydir/??_*; do
-		source $f
-	done
-fi
+for f in $mydir/??_*; do
+	source $f
+done
