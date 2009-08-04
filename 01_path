@@ -1,10 +1,7 @@
-# Don't re-path for nested shells
-if [[ $SHLVL == 1 ]]; then
-	# I want /opt/local/bin to take precedence
-	path=(/opt/local/bin $path)
-
-	# Allow MacPorts man pages
-	manpath=($manpath /opt/local/man)
+if [[ $OSTYPE[1,6] == "darwin" ]]; then
+	if [ -x /usr/libexec/path_helper ]; then
+		eval `/usr/libexec/path_helper -s`
+	fi
 fi
 
 # Alias to put ccache first on path
