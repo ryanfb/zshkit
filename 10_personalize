@@ -3,3 +3,5 @@ if [[ -f /etc/debian_version ]]; then
 	alias personalize-debian='sudo aptitude install ack-grep ruby ruby1.9 \
 		git-doc subversion feh vim manpages-dev'
 fi
+
+alias personalize-gems='sudo gem install git_remote_branch cheat'
