@@ -1,5 +1,6 @@
-# I want /opt/local/bin to take precedence
-path=(/opt/local/bin $path)
+if [[ $OSTYPE[1,6] == "darwin" ]]; then
+	if [ -x /usr/libexec/path_helper ]; then
+		eval `/usr/libexec/path_helper -s`
+	fi
+fi
 
-# Allow MacPorts man pages
-manpath=($manpath /opt/local/man)
