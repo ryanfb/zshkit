@@ -6,8 +6,6 @@
 	status = auto
 	branch = auto
 	ui = auto
-[pack]
-	threads = 0
 [merge]
 	tool = vimdiff
 [alias]
