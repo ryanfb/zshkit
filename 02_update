@@ -8,6 +8,9 @@ if [[ -x `which git` || -x /usr/local/git/bin/git ]]; then
 		pushd $HOME
 		pushd $mydir
 		git pull
+		setopt dotglob
+		cp -r dotfiles/* $HOME/
+		unsetopt dotglob
 		popd
 		source .zshrc
 		source .zshenv

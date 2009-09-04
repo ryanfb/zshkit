@@ -1,11 +1,14 @@
-# We always want a few of the EMACs-style maps
-bindkey "^A" beginning-of-line
-bindkey "^E" end-of-line
-bindkey "^R" history-incremental-search-backward
+# only run if stdin is a terminal
+if [ -t 0 ]; then
+	# We always want a few of the EMACs-style maps
+	bindkey "^A" beginning-of-line
+	bindkey "^E" end-of-line
+	bindkey "^R" history-incremental-search-backward
 
-# Add some custom non-standard keys
-bindkey "^S" backward-word
-stty -ixon
+	# Add some custom non-standard keys
+	bindkey "^S" backward-word
+	stty -ixon
 
-bindkey "${key[Home]}" beginning-of-line
-bindkey "${key[End]}" end-of-line
+	bindkey "${key[Home]}" beginning-of-line
+	bindkey "${key[End]}" end-of-line
+fi
