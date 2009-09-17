@@ -1,6 +1,6 @@
 if [[ $OSTYPE[1,6] == "darwin" ]]; then
 	if [ -x /usr/libexec/path_helper ]; then
-		eval `/usr/libexec/path_helper -s`
+		eval `MANPATH="" /usr/libexec/path_helper -s`
 	fi
 fi
 
