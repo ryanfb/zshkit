@@ -1,6 +1,6 @@
 HISTFILE=~/.history
-HISTSIZE=10500
-SAVEHIST=10000
+HISTSIZE=100500
+SAVEHIST=100000
 setopt share_history
 setopt extended_history
 setopt hist_expire_dups_first
