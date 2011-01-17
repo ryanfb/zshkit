@@ -1,7 +1,7 @@
 # Alias to be a huge jerk and install everything I want on a clean Debian install
 if [[ -f /etc/debian_version ]]; then
 	alias personalize-debian='sudo aptitude install ack-grep ruby ruby1.9 \
-		git-doc subversion feh vim manpages-dev'
+		git-doc subversion feh vim manpages-dev ccache'
 fi
 
 alias personalize-gems='sudo gem install git_remote_branch cheat'
