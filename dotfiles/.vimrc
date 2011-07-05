@@ -83,10 +83,11 @@ set number
 set tabstop=2
 set shiftwidth=2
 
-" set expandtab
+set expandtab
 
 set foldenable!
 
+set background=light
 colorscheme desert
 
 " vim: set ft=vim :
