@@ -1,0 +1,15 @@
+function prompt-hostname () {
+  if [[ -z $PROMPT_HOSTNAME ]]; then
+    case "$HOST" in
+      'telamon.local')
+        PROMPT_HOSTNAME="Τελαμών"
+      ;;
+      *)
+        PROMPT_HOSTNAME="%m"
+      ;;
+    esac
+  fi
+  echo "$PROMPT_HOSTNAME"
+}
+
+export PROMPT_HOSTNAME=`prompt-hostname`
