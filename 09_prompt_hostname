@@ -4,6 +4,9 @@ function prompt-hostname () {
       'telamon.local')
         PROMPT_HOSTNAME="Τελαμών"
       ;;
+      'paris.local')
+        PROMPT_HOSTNAME="Πάρις"
+      ;;
       *)
         PROMPT_HOSTNAME="%m"
       ;;
