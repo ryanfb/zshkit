@@ -10,6 +10,9 @@ function prompt-hostname () {
       'astyanax.local')
         PROMPT_HOSTNAME="Ἀστυάναξ"
       ;;
+      'patroklos.local')
+        PROMPT_HOSTNAME="Πάτροκλος"
+      ;;
       *)
         PROMPT_HOSTNAME="%m"
       ;;
