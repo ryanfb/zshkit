@@ -1,5 +1,5 @@
 # Set the terminal title in OS X, stolen from http://tinyurl.com/5u9wfr
-if [ -t 0 ]; then
+if [[ -t 0 && -o login ]]; then
 	case $TERM in (*xterm*|ansi)
 		function settab { print -Pn "\e]1;%n@%m: %~\a" }
 		function settitle { print -Pn "\e]2;%n@%m: %~\a" }
