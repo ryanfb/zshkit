@@ -10,5 +10,5 @@ function hostname-color () {
 }
 
 hostname_color=`hostname-color`
-PROMPT='%{$reset_color%}%n@%{$hostname_color%}`prompt-hostname`%{$reset_color%}:%~`git-prompt`%(!.#.$) '
+PROMPT='%{$reset_color%}%n@%{$hostname_color%}${PROMPT_HOSTNAME}%{$reset_color%}:%~`git-prompt`%(!.#.$) '
 RPROMPT='%{$reset_color%}[%*]' 

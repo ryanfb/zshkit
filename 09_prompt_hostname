@@ -2,23 +2,22 @@ function prompt-hostname () {
   if [[ -z $PROMPT_HOSTNAME ]]; then
     case "$HOST" in
       'telamon.local')
-        PROMPT_HOSTNAME="Τελαμών"
+        export PROMPT_HOSTNAME="Τελαμών"
       ;;
       'paris.local')
-        PROMPT_HOSTNAME="Πάρις"
+        export PROMPT_HOSTNAME="Πάρις"
       ;;
       'astyanax.local')
-        PROMPT_HOSTNAME="Ἀστυάναξ"
+        export PROMPT_HOSTNAME="Ἀστυάναξ"
       ;;
       'patroklos.local')
-        PROMPT_HOSTNAME="Πάτροκλος"
+        export PROMPT_HOSTNAME="Πάτροκλος"
       ;;
       *)
-        PROMPT_HOSTNAME="%m"
+        export PROMPT_HOSTNAME="%m"
       ;;
     esac
   fi
-  echo "$PROMPT_HOSTNAME"
 }
 
-export PROMPT_HOSTNAME=`prompt-hostname`
+prompt-hostname
