@@ -13,6 +13,9 @@ function prompt-hostname () {
       'patroklos.local')
         export PROMPT_HOSTNAME="Πάτροκλος"
       ;;
+      'briseis.local')
+        export PROMPT_HOSTNAME="Βρισηΐς"
+      ;;
       *)
         export PROMPT_HOSTNAME="%m"
       ;;
