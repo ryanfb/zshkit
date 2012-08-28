@@ -4,3 +4,6 @@ scriptsdir="$HOME/source/scripts"
 # (recursing like this adds a few ms if you do it each login)
 alias scripts="path=($path $scriptsdir/**/)"
 
+if [ -e $scriptsdir/system/ssh-copy-id ]; then
+  alias ssh-copy-id="$scriptsdir/system/ssh-copy-id"
+fi
