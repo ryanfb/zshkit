@@ -1,3 +1,9 @@
 if [ -e /Applications/Marked.app ]; then
   alias md='open -a Marked.app'
 fi
+
+if (( $+commands[markdown] && $+commands[w3m])); then
+  function mdless () {
+    markdown $1 | w3m -T 'text/html'
+  }
+fi
