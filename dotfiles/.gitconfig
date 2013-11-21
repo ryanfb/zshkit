@@ -27,3 +27,5 @@
 	add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
 [core]
 	excludesfile = /Users/ryan/.gitignore
+[push]
+	default = matching
