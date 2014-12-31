@@ -1,0 +1,4 @@
+if [[ -e "$HOME/.go" ]]; then
+  export PATH="$PATH:$HOME/.go/bin"
+  export GOPATH="$HOME/.go"
+fi
