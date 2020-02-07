@@ -1,3 +1,9 @@
+zmodload zsh/zpty
+
+export ZSH_AUTOSUGGEST_USE_ASYNC="true"
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
 if [ -e /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
   source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi

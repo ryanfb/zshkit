@@ -7,6 +7,7 @@ if [ -t 0 ]; then
 
 	# Add some custom non-standard keys
 	bindkey "^S" backward-word
+	bindkey "^F" forward-word
 	stty -ixon
 
 	bindkey "${key[Home]}" beginning-of-line
