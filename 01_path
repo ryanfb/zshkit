@@ -7,3 +7,6 @@ fi
 # Alias to put ccache first on path
 alias use-ccache="path=(/usr/local/bin/ccache $path)"
 
+if [ -d /usr/local/sbin ]; then
+  export PATH="/usr/local/sbin:$PATH"
+fi
