@@ -1,3 +1,5 @@
-if [ -e /usr/local/etc/profile.d/z.sh ]; then
+if [ -e /usr/local/share/z.lua/z.lua ]; then
+  eval "$(lua /usr/local/share/z.lua/z.lua --init zsh)"
+elif [ -e /usr/local/etc/profile.d/z.sh ]; then
   . /usr/local/etc/profile.d/z.sh
 fi
